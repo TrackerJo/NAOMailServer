@@ -11,6 +11,10 @@ import time
 from email import encoders
 import random
 from email.message import EmailMessage
+import os
+from dotenv import load_dotenv, dotenv_values 
+# loading variables from .env file
+load_dotenv() 
 
 # Import Module
 import paramiko
@@ -26,7 +30,7 @@ PASSWORD = "nao"
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
 sender_email = "jovi@clhscadets.com"  # Enter your address
-password = "jovi1234"
+password = os.getenv("PASSWORD")  # Enter your password
 emailMSG = None
 hostName = "192.168.1.16"
 serverPort = 8080
